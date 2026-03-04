@@ -10,7 +10,7 @@ const navItems = [
 ---
 
 <nav class="sticky top-0 z-50 bg-dark/95 backdrop-blur-md min-h-[90px] flex items-center border-b border-primary/10 px-4 md:px-12 animate-slide-down">
-    <div class="container mx-auto flex items-center justify-between relative">
+    <div class="container mx-auto flex items-center justify-between relative w-full overflow-x-hidden md:overflow-x-visible">
         <!-- Logo Area -->
         <a href="/" class="flex-shrink-0 group z-50">
             <div class="flex items-center gap-4">
@@ -39,7 +39,7 @@ const navItems = [
         </button>
 
         <!-- Mobile Menu Overlay -->
-        <div id="mobile-menu" class="fixed inset-0 bg-dark/98 z-40 hidden flex flex-col items-center justify-center space-y-8 animate-fade-in lg:hidden">
+        <div id="mobile-menu" class="fixed inset-0 bg-dark/98 z-40 hidden flex-col items-center justify-center space-y-8 animate-fade-in lg:hidden overflow-x-hidden">
             <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/dark-matter.png')] opacity-20 pointer-events-none"></div>
             {navItems.map((item) => (
                 <a 
