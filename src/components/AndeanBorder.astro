@@ -1,0 +1,49 @@
+---
+interface Props {
+	position?: 'top' | 'bottom';
+}
+
+const { position = 'top' } = Astro.props;
+---
+
+<div class={`andean-border group ${position === 'top' ? 'border-t' : 'border-b'} border-primary/20 bg-dark/50 backdrop-blur-sm overflow-hidden`}>
+    <div class="h-10 w-full overflow-hidden relative border-y border-white/5">
+        <div class={`flex items-center absolute top-0 left-0 h-full w-max ${position === 'top' ? 'animate-marquee-left' : 'animate-marquee-right'}`}>
+            {Array.from({ length: 2 }).map(() => (
+                <div class="flex items-center flex-nowrap shrink-0">
+                    {Array.from({ length: 40 }).map((_) => (
+                        <svg class="h-6 w-16 md:h-8 md:w-20 flex-shrink-0 text-primary/40 group-hover:text-primary transition-colors duration-500" viewBox="0 0 100 50" preserveAspectRatio="none">
+                            <path d="M50 0 L100 25 L50 50 L0 25 Z" fill="currentColor" fill-opacity="0.1" stroke="currentColor" stroke-width="1" />
+                            <path d="M50 10 L80 25 L50 40 L20 25 Z" fill="currentColor" fill-opacity="0.3" stroke="currentColor" stroke-width="0.5" />
+                            <circle cx="50" cy="25" r="2" fill="currentColor" />
+                        </svg>
+                    ))}
+                </div>
+            ))}
+        </div>
+    </div>
+</div>
+
+<style>
+    .andean-border {
+        @apply relative z-20 w-full select-none pointer-events-none;
+    }
+    
+    @keyframes marquee-left {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+    }
+    
+    @keyframes marquee-right {
+        0% { transform: translateX(-50%); }
+        100% { transform: translateX(0); }
+    }
+    
+    .animate-marquee-left {
+        animation: marquee-left 60s linear infinite;
+    }
+    
+    .animate-marquee-right {
+        animation: marquee-right 60s linear infinite;
+    }
+</style>

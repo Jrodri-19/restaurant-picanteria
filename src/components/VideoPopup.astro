@@ -1,0 +1,96 @@
+---
+---
+
+<div id="video-announcement" class="fixed bottom-8 right-8 z-[100] w-[320px] md:w-[500px] stone-panel shadow-2xl animate-slide-up hidden group">
+    <!-- Header / Title -->
+    <div class="bg-primary px-4 py-2 flex items-center justify-between relative z-10">
+        <span class="text-dark font-heading font-black text-[10px] uppercase tracking-widest flex items-center gap-2">
+            <span class="w-2 h-2 bg-dark rounded-full animate-pulse"></span>
+            Anuncio Especial
+        </span>
+        <button id="close-video" class="text-dark hover:scale-125 transition-transform p-1">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+    </div>
+
+    <a 
+        href="https://www.tiktok.com/@wasimikuna.picanteria/video/7613304102675647764" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        class="block hover:opacity-90 transition-opacity"
+    >
+        <!-- Video Container -->
+        <div class="relative aspect-video bg-black overflow-hidden border-x border-b border-primary/20">
+            <video 
+                id="announcement-video" 
+                class="w-full h-full object-cover"
+                src="/assets/videos/DiaDeLaMujer.mp4"
+                loop
+            ></video>
+            
+            <!-- Play / Unmute Overlay -->
+            <button id="unmute-btn" class="absolute inset-0 flex flex-col items-center justify-center bg-black/60 group-hover:bg-black/40 transition-colors z-20">
+                <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-dark shadow-lg animate-scale-in">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 ml-1" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z" />
+                    </svg>
+                </div>
+                <span class="text-white font-heading text-[8px] uppercase tracking-[0.3em] mt-3 drop-shadow-md">Reproducir con Sonido</span>
+            </button>
+        </div>
+
+        <!-- Footer / Caption -->
+        <div class="bg-dark/95 p-4 backdrop-blur-md border-x border-b border-primary/10">
+            <h4 class="text-primary font-heading font-bold text-xs uppercase mb-1">Día Internacional de la Mujer</h4>
+            <p class="text-text/60 text-[10px] leading-relaxed">Únete a nosotros para celebrar esta fecha especial con una experiencia única. Haz click para ver más.</p>
+        </div>
+    </a>
+</div>
+
+<script>
+    const popup = document.getElementById('video-announcement');
+    const video = document.getElementById('announcement-video') as HTMLVideoElement;
+    const unmuteBtn = document.getElementById('unmute-btn');
+    const closeBtn = document.getElementById('close-video');
+
+    // Show after a delay
+    setTimeout(() => {
+        if (popup && !localStorage.getItem('video-announcement-closed')) {
+            popup.classList.remove('hidden');
+            popup.classList.add('flex', 'flex-col');
+        }
+    }, 2000);
+
+    unmuteBtn?.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        if (video) {
+            video.muted = false;
+            video.play();
+            unmuteBtn.classList.add('hidden');
+        }
+    });
+
+    closeBtn?.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        if (popup) {
+            popup.classList.add('hidden');
+            if (video) video.pause();
+            // Optional: remember choice for session
+            // localStorage.setItem('video-announcement-closed', 'true');
+        }
+    });
+</script>
+
+<style>
+    @keyframes slideUp {
+        from { transform: translateY(100px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+    }
+    .animate-slide-up {
+        animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+</style>

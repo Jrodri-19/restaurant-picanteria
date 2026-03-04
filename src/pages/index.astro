@@ -1,0 +1,44 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import AndeanBorder from '../components/AndeanBorder.astro';
+import Menu from '../components/Menu.astro';
+import Nosotros from '../components/Nosotros.astro';
+import Reservas from '../components/Reservas.astro';
+import Servicios from '../components/Servicios.astro';
+import Contacto from '../components/Contacto.astro';
+---
+
+<Layout title="WASIMIKUNA | Picantería Arequipeña Premium">
+	<main>
+		<Hero />
+
+        <!-- Featured Section Portal -->
+        <section class="py-24 bg-dark relative overflow-hidden">
+            <div class="container mx-auto px-4 text-center space-y-12">
+                <h2 class="text-4xl md:text-6xl animate-entrance">Descubre la Experiencia</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <a href="/nosotros" class="stone-panel p-10 hover:border-primary/50 transition-all group">
+                        <h3 class="text-2xl mb-4 group-hover:text-primary transition-colors">Nuestra Historia</h3>
+                        <p class="text-text/50">Tradición picantera en el corazón de Arequipa.</p>
+                    </a>
+                    <a href="/carta" class="stone-panel p-10 hover:border-primary/50 transition-all group">
+                        <h3 class="text-2xl mb-4 group-hover:text-primary transition-colors">La Carta</h3>
+                        <p class="text-text/50">Sabores auténticos tallados en piedra.</p>
+                    </a>
+                    <a href="/reservas" class="stone-panel p-10 hover:border-primary/50 transition-all group">
+                        <h3 class="text-2xl mb-4 group-hover:text-primary transition-colors">Reservas</h3>
+                        <p class="text-text/50">Asegura tu lugar en nuestro fogón.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+		<footer class="py-10 text-center border-t border-primary/10 bg-dark">
+			<AndeanBorder position="top" />
+			<p class="mt-8 text-primary/40 text-sm tracking-widest font-heading">
+				© 2026 WASIMIKUNA PICANTERÍA • AREQUIPA PERÚ
+			</p>
+		</footer>
+	</main>
+</Layout>

@@ -1,0 +1,17 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import Contacto from '../components/Contacto.astro';
+---
+
+<Layout title="Contacto | WASIMIKUNA">
+    <main class="animate-entrance">
+        <Hero 
+            image="/assets/img/contactanos.png" 
+            title="Contacto" 
+            subtitle="Visítanos en Socabaya"
+            showSun={false}
+        />
+        <Contacto />
+    </main>
+</Layout>

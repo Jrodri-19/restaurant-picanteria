@@ -1,0 +1,209 @@
+{
+    "categories": [
+        {
+            "name": "Entradas",
+            "items": [
+                {
+                    "name": "MOTE DE HABAS",
+                    "description": "piqueo de habas sancochadas",
+                    "price": "10.00"
+                },
+                {
+                    "name": "QUESO FRITO",
+                    "description": "queso dorado y trozos de yuca frita",
+                    "price": "15.00"
+                },
+                {
+                    "name": "ESCRIBANO",
+                    "description": "papa hervida con rodajas de tomate y rocoto, con aderezo",
+                    "price": "12.00"
+                },
+                {
+                    "name": "TORREJITAS",
+                    "description": "",
+                    "price": "15.00"
+                },
+                {
+                    "name": "CHOCLO CON QUESO",
+                    "description": "choclo sancochado en agua de anis, acompañado con rebanada de queso",
+                    "price": "12.00"
+                },
+                {
+                    "name": "SOLTERO DE QUESO",
+                    "description": "queso paria en trozos, acompañado de choclo, verde, cebolla",
+                    "price": "22.00"
+                },
+                {
+                    "name": "ANTICUCHOS",
+                    "description": "Rebanadas de corazon de res a la parrilla, acompañado con papa",
+                    "price": "25.00"
+                }
+            ]
+        },
+        {
+            "name": "Piqueos",
+            "items": [
+                {
+                    "name": "PIQUEO DE CHANCHO",
+                    "description": "chicharron de chancho crocante servido con maiz tostado, papa dorada y ensalada",
+                    "price": "40.00"
+                },
+                {
+                    "name": "PIQUEO DE POLLO",
+                    "description": "pollo crocante (trozado) con papas doradas y ensalada",
+                    "price": "40.00"
+                },
+                {
+                    "name": "PIQUEO MIXTO",
+                    "description": "chicharron de chancho (trozado) chicharron de pollo servido con maiz con papas doradas y ensalada legumbres o sarza criolla",
+                    "price": "70.00"
+                }
+            ]
+        },
+        {
+            "name": "Tradicionales",
+            "items": [
+                {
+                    "name": "DOBLE AREQUIPEÑO",
+                    "description": "rocoto al horno, pastel de papa, trozos de chancho, ensalada de maiz",
+                    "price": "40.00"
+                },
+                {
+                    "name": "TRIPLE AREQUIPEÑO",
+                    "description": "rocoto al horno, pastel de papa, chicharron de chancho y sarza de patitas de chancho, maiz",
+                    "price": "45.00"
+                },
+                {
+                    "name": "CHICHARRÓN DE CHANCHO",
+                    "description": "trozos de chancho acompañado con papas doradas, camote frito y sarza criolla",
+                    "price": "45.00"
+                },
+                {
+                    "name": "MILANESA DE POLLO",
+                    "description": "pechuga de pollo a la caja china con papas doradas, camote frito y sarza criolla",
+                    "price": "35.00"
+                },
+                {
+                    "name": "CAJA CHINA",
+                    "description": "trozos de chancho a la caja china con papas doradas, camote frito y sarza criolla",
+                    "price": "45.00"
+                },
+                {
+                    "name": "COSTILLAR FRITO",
+                    "description": "costillar de cordero frito con papas doradas y legumbres",
+                    "price": "45.00"
+                },
+                {
+                    "name": "BISTEK A LO POBRE",
+                    "description": "filete de carne de res, huevo frito, papas, platano frito, encebollado y arroz",
+                    "price": "38.00"
+                },
+                {
+                    "name": "AMERICANO",
+                    "description": "rocoto al horno, pastel de papa, sarza de patitas, arroz, guiso del dia",
+                    "price": "40.00"
+                },
+                {
+                    "name": "CHULETA DE RES",
+                    "description": "jugoso filete de carne de res con papas y legumbres",
+                    "price": "35.00"
+                },
+                {
+                    "name": "MILANESA JUNIOR",
+                    "description": "",
+                    "price": "16.00"
+                },
+                {
+                    "name": "POLLO A LA PLANCHA",
+                    "description": "pechuga de pollo a la plancha con ensalada y papas fritas",
+                    "price": "35.00"
+                },
+                {
+                    "name": "CHICHARRÓN DE POLLO",
+                    "description": "trozos de pollo crocante, servido con papas doradas y ensalada",
+                    "price": "35.00"
+                }
+            ]
+        },
+        {
+            "name": "Pescados",
+            "items": [
+                {
+                    "name": "CEVICHE CLÁSICO",
+                    "description": "",
+                    "price": "25.00"
+                },
+                {
+                    "name": "CEVICHE MIXTO",
+                    "description": "",
+                    "price": "30.00"
+                },
+                {
+                    "name": "ARROZ DE MARISCOS",
+                    "description": "",
+                    "price": "30.00"
+                },
+                {
+                    "name": "CHICHARRÓN DE PESCADO",
+                    "description": "",
+                    "price": "30.00"
+                },
+                {
+                    "name": "CHUPE DE CAMARONES",
+                    "description": "",
+                    "price": "50.00"
+                },
+                {
+                    "name": "CHICHARRÓN DE CAMARONES",
+                    "description": "",
+                    "price": "50.00"
+                }
+            ]
+        },
+        {
+            "name": "Bebidas",
+            "items": [
+                {
+                    "name": "COCA COLA",
+                    "description": "500 ML / 1.5 LT / 1 LT",
+                    "price": "5.00 / 14.00 / 10.00"
+                },
+                {
+                    "name": "INCA KOLA",
+                    "description": "500 ML / 1.5 LT / 1 LT",
+                    "price": "5.00 / 14.00 / 10.00"
+                },
+                {
+                    "name": "KOLA ESCOCESA",
+                    "description": "500 ML / 1.5 LT / 1 LT",
+                    "price": "5.00 / 14.00 / 10.00"
+                },
+                {
+                    "name": "CHICHA GUIÑAPO",
+                    "description": "1 LT",
+                    "price": "10.00"
+                },
+                {
+                    "name": "AGUA CIELO",
+                    "description": "500 ML / 1 LT",
+                    "price": "3.00 / 6.00"
+                },
+                {
+                    "name": "LIMONADA",
+                    "description": "1 LT",
+                    "price": "10.00"
+                },
+                {
+                    "name": "LIMONADA FROZEN",
+                    "description": "1 LT",
+                    "price": "15.00"
+                },
+                {
+                    "name": "SOCOSANI",
+                    "description": "500 ML / 1 LT",
+                    "price": "5.00 / 10.00"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,45 @@
+---
+---
+<section id="nosotros" class="py-24 relative bg-dark overflow-hidden">
+    <div class="container mx-auto px-4 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div class="space-y-8 animate-entrance">
+                <h2 class="text-5xl md:text-7xl">Nuestra Historia</h2>
+                <div class="h-1 w-24 bg-primary"></div>
+                
+                <div class="space-y-6 text-lg text-text/80 leading-relaxed font-light">
+                    <p>
+                        <span class="text-primary font-bold">Wasi Mikuna</span> es una picantería renovada que rinde culto a la tradición viva de Arequipa, inspirada en la cultura de los <span class="italic text-primary/90">ccálas</span> y <span class="italic text-primary/90">lonccos</span>, guardianes del sabor, la tierra y el fogón ardiente.
+                    </p>
+                    <p>
+                        Nuestra cocina respeta las recetas de antaño, preparadas con identidad, paciencia y ese auténtico sabor que se comparte en familia. Cada plato nace del legado picantero y se sirve en un ambiente acogedor, rústico y lleno de historia.
+                    </p>
+                    <div class="bg-primary/5 border-l-4 border-primary p-6 rounded-r-lg italic">
+                        "Los sábados y domingos nos convertimos en una fiesta cultural con orquesta en vivo y danzas tradicionales los domingos."
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative group">
+                <div class="absolute -inset-4 bg-primary/20 blur-3xl rounded-full opacity-0 group-hover:opacity-30 transition-opacity duration-1000"></div>
+                <div class="stone-panel aspect-[4/5] flex items-center justify-center p-4">
+                     <img 
+                        src="/assets/img/nosotros.png" 
+                        alt="Nuestra Tradición" 
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
+                     />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    @keyframes spin-slow {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+    .animate-spin-slow {
+        animation: spin-slow 20s linear infinite;
+    }
+</style>

@@ -1,0 +1,112 @@
+---
+const navItems = [
+  { name: 'Inicio', href: '/' },
+  { name: 'Carta', href: '/carta' },
+  { name: 'Reservas', href: '/reservas' },
+  { name: 'Servicios', href: '/servicios' },
+  { name: 'Nosotros', href: '/nosotros' },
+  { name: 'Contacto', href: '/contacto' },
+];
+---
+
+<nav class="sticky top-0 z-50 bg-dark/95 backdrop-blur-md min-h-[90px] flex items-center border-b border-primary/10 px-4 md:px-12 animate-slide-down">
+    <div class="container mx-auto flex items-center justify-between relative">
+        <!-- Logo Area -->
+        <a href="/" class="flex-shrink-0 group z-50">
+            <div class="flex items-center gap-4">
+                <img src="/logo.png" alt="WASIMIKUNA Logo" class="h-12 md:h-16 w-auto group-hover:scale-110 transition-transform duration-700" />
+            </div>
+        </a>
+
+        <!-- Desktop Menu -->
+        <div class="hidden lg:flex items-center gap-10">
+            {navItems.map((item) => (
+                <a 
+                    href={item.href} 
+                    class="text-text/60 hover:text-primary font-heading font-bold uppercase tracking-[0.2em] text-[10px] transition-all duration-300 relative group/link"
+                >
+                    {item.name}
+                    <span class="absolute -bottom-1 left-0 w-0 h-px bg-primary group-hover/link:w-full transition-all duration-500"></span>
+                </a>
+            ))}
+        </div>
+
+        <!-- Mobile Menu Toggle -->
+        <button id="menu-toggle" class="lg:hidden z-50 p-2 text-primary" aria-label="Toggle Menu">
+            <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+        </button>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="fixed inset-0 bg-dark/98 z-40 hidden flex flex-col items-center justify-center space-y-8 animate-fade-in lg:hidden">
+            <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/dark-matter.png')] opacity-20 pointer-events-none"></div>
+            {navItems.map((item) => (
+                <a 
+                    href={item.href} 
+                    class="text-text/60 hover:text-primary font-heading font-black uppercase tracking-[0.4em] text-2xl transition-all duration-500 hover:scale-110"
+                >
+                    {item.name}
+                </a>
+            ))}
+            <a 
+                href="/reservas" 
+                class="mt-8 bg-primary text-dark px-12 py-4 font-heading font-black uppercase tracking-[0.2em] text-sm"
+            >
+                Reservar Mesa
+            </a>
+        </div>
+
+        <!-- CTA Button (Desktop) -->
+        <a 
+            href="/reservas" 
+            class="hidden lg:block bg-primary text-dark px-8 py-2.5 rounded-none font-heading font-black uppercase tracking-widest text-[10px] hover:bg-white transition-colors duration-500 shadow-[0_0_20px_rgba(243,208,99,0.2)]"
+        >
+            Reservar
+        </a>
+    </div>
+</nav>
+
+<script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+
+    menuToggle?.addEventListener('click', () => {
+        const isHidden = mobileMenu?.classList.contains('hidden');
+        if (isHidden) {
+            mobileMenu?.classList.remove('hidden');
+            mobileMenu?.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+            if (menuIcon) {
+                menuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12" />';
+            }
+        } else {
+            mobileMenu?.classList.add('hidden');
+            mobileMenu?.classList.remove('flex');
+            document.body.style.overflow = 'auto';
+            if (menuIcon) {
+                menuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16m-7 6h7" />';
+            }
+        }
+    });
+
+    // Close menu when clicking links
+    mobileMenu?.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu?.classList.add('hidden');
+            mobileMenu?.classList.remove('flex');
+            document.body.style.overflow = 'auto';
+        });
+    });
+</script>
+
+<style>
+    @keyframes slideDown {
+        from { transform: translateY(-100%); }
+        to { transform: translateY(0); }
+    }
+    .animate-slide-down {
+        animation: slideDown 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+</style>

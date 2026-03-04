@@ -1,0 +1,91 @@
+---
+import AndeanBorder from './AndeanBorder.astro';
+import VideoPopup from './VideoPopup.astro';
+
+interface Props {
+    image?: string;
+    title?: string;
+    subtitle?: string;
+    showSun?: boolean;
+}
+
+const { 
+    image = "/assets/img/hero.png", 
+    title = "WASI MIKUNA", 
+    subtitle = "Picantería Arequipeña",
+    showSun = true
+} = Astro.props;
+---
+
+<section class="relative min-h-[70vh] md:min-h-[90vh] flex flex-col items-center justify-center overflow-hidden">
+    <!-- Cinematic Background -->
+    <div class="absolute inset-0 z-0">
+        <div class="absolute inset-0 bg-gradient-to-b from-dark/80 via-dark/40 to-dark z-10"></div>
+        <img 
+            src={image} 
+            alt={title} 
+            class="w-full h-full object-cover opacity-50 scale-105 animate-scale-in"
+        />
+    </div>
+    
+    <!-- Starry background overlay -->
+    <div class="absolute inset-0 z-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20 pointer-events-none z-20"></div>
+    
+    <!-- Top Border Decoration -->
+    <div class="absolute top-0 left-0 w-full z-40">
+        <AndeanBorder position="top" />
+    </div>
+
+    <!-- Hero Content -->
+    <div class="relative z-30 container mx-auto px-4 pt-20 pb-10 text-center animate-entrance">
+        {showSun && (
+            <!-- Sun Deity Icon (Center) -->
+            <div class="mb-12 inline-block hover:scale-105 transition-transform duration-700">
+                <div class="relative w-32 h-32 md:w-48 md:h-48">
+                    <!-- Outer glow -->
+                    <div class="absolute inset-0 bg-primary/20 blur-3xl rounded-full scale-150 animate-pulse"></div>
+                    <!-- Sun SVG -->
+                    <svg viewBox="0 0 200 200" class="w-full h-full text-primary drop-shadow-[0_0_20px_rgba(243,208,99,0.5)]">
+                        <circle cx="100" cy="100" r="70" fill="none" stroke="currentColor" stroke-width="2" />
+                        {Array.from({ length: 16 }).map((_, i) => (
+                            <path 
+                                d="M100 20 L110 50 L90 50 Z" 
+                                fill="currentColor" 
+                                style={`transform: rotate(${i * 22.5}deg); transform-origin: 100px 100px;`}
+                            />
+                        ))}
+                        <rect x="70" y="80" width="60" height="40" fill="none" stroke="currentColor" stroke-width="2" rx="5" />
+                        <circle cx="85" cy="95" r="5" fill="currentColor" />
+                        <circle cx="115" cy="95" r="5" fill="currentColor" />
+                    </svg>
+                </div>
+            </div>
+        )}
+
+        <div class="space-y-6">
+            {subtitle && <p class="text-sm md:text-lg font-heading tracking-[0.5em] text-primary/80 uppercase">{subtitle}</p>}
+            <h1 class="text-5xl md:text-9xl font-extrabold tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-primary via-primary/80 to-primary/40 flex flex-wrap items-center justify-center gap-x-6">
+                {title}
+            </h1>
+            
+            <div class="flex items-center justify-center gap-4">
+                <div class="h-px w-12 bg-primary/30"></div>
+                <p class="text-xl md:text-2xl italic font-serif text-primary/90">Picantería Arequipeña</p>
+                <div class="h-px w-12 bg-primary/30"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Border Decoration -->
+    <div class="absolute bottom-0 left-0 w-full z-40">
+        <AndeanBorder position="bottom" />
+    </div>
+
+    <VideoPopup />
+</section>
+
+<style>
+    section {
+        background: radial-gradient(circle at center, #1a1a1a 0%, #0c0c0c 100%);
+    }
+</style>
