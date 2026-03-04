@@ -70,35 +70,47 @@ const currentPath = Astro.url.pathname;
 </div>
 
 <script>
-    const menuToggle = document.getElementById('menu-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const menuIcon = document.getElementById('menu-icon');
+    document.addEventListener('astro:page-load', () => {
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
 
-    menuToggle?.addEventListener('click', () => {
-        const isHidden = mobileMenu?.classList.contains('hidden');
-        if (isHidden) {
-            mobileMenu?.classList.remove('hidden');
-            mobileMenu?.classList.add('flex');
-            document.body.style.overflow = 'hidden';
-            if (menuIcon) {
-                menuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12" />';
-            }
-        } else {
-            mobileMenu?.classList.add('hidden');
-            mobileMenu?.classList.remove('flex');
-            document.body.style.overflow = 'auto';
-            if (menuIcon) {
-                menuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16m-7 6h7" />';
-            }
-        }
-    });
+        if (!menuToggle || !mobileMenu || !menuIcon) return;
 
-    // Close menu when clicking links
-    mobileMenu?.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            mobileMenu?.classList.add('hidden');
-            mobileMenu?.classList.remove('flex');
-            document.body.style.overflow = 'auto';
+        const originalIcon = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16m-7 6h7" />';
+        const closeIcon = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12" />';
+
+        const toggleMenu = (show) => {
+            if (show) {
+                mobileMenu.classList.remove('hidden');
+                mobileMenu.classList.add('flex');
+                document.body.style.overflow = 'hidden';
+                menuIcon.innerHTML = closeIcon;
+            } else {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('flex');
+                document.body.style.overflow = '';
+                menuIcon.innerHTML = originalIcon;
+            }
+        };
+
+        menuToggle.addEventListener('click', () => {
+            const isHidden = mobileMenu.classList.contains('hidden');
+            toggleMenu(isHidden);
+        });
+
+        // Close menu when clicking links
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                toggleMenu(false);
+            });
+        });
+
+        // Close menu on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+                toggleMenu(false);
+            }
         });
     });
 </script>
