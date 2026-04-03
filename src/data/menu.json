@@ -30,7 +30,7 @@
                 },
                 {
                     "name": "SOLTERO DE QUESO",
-                    "description": "queso paria en trozos, acompañado de choclo, verde, cebolla",
+                    "description": "queso paria en trozos, acompañado de choclo desgranado, habas verdes, tomate y aceitunas",
                     "price": "22.00"
                 },
                 {
@@ -45,7 +45,7 @@
             "items": [
                 {
                     "name": "PIQUEO DE CHANCHO",
-                    "description": "chicharron de chancho crocante servido con maiz tostado, papa dorada y ensalada",
+                    "description": "chicharron de chancho crocante servido con maiz tostado, papa dorada y sarza criolla",
                     "price": "40.00"
                 },
                 {
@@ -65,63 +65,78 @@
             "items": [
                 {
                     "name": "DOBLE AREQUIPEÑO",
-                    "description": "rocoto al horno, pastel de papa, trozos de chancho, ensalada de maiz",
-                    "price": "40.00"
+                    "description": "rocoto al horno, pastel de papa, trozos de chancho, sarza criolla y maiz tostado",
+                    "price": "50.00"
                 },
                 {
                     "name": "TRIPLE AREQUIPEÑO",
-                    "description": "rocoto al horno, pastel de papa, chicharron de chancho y sarza de patitas de chancho, maiz",
-                    "price": "45.00"
+                    "description": "rocoto al horno, pastel de papa, chicharron de chancho, sarza de patitas de chancho y maiz tostado",
+                    "price": "55.00"
                 },
                 {
                     "name": "CHICHARRÓN DE CHANCHO",
                     "description": "trozos de chancho acompañado con papas doradas, camote frito y sarza criolla",
-                    "price": "45.00"
+                    "price": "55.00"
                 },
                 {
                     "name": "MILANESA DE POLLO",
-                    "description": "pechuga de pollo a la caja china con papas doradas, camote frito y sarza criolla",
-                    "price": "35.00"
+                    "description": "pechuga de pollo con papas doradas, camote frito y sarza criolla",
+                    "price": "45.00"
                 },
                 {
                     "name": "CAJA CHINA",
                     "description": "trozos de chancho a la caja china con papas doradas, camote frito y sarza criolla",
-                    "price": "45.00"
+                    "price": "55.00"
                 },
                 {
                     "name": "COSTILLAR FRITO",
                     "description": "costillar de cordero frito con papas doradas y legumbres",
-                    "price": "45.00"
+                    "price": "55.00"
                 },
                 {
                     "name": "BISTEK A LO POBRE",
                     "description": "filete de carne de res, huevo frito, papas, platano frito, encebollado y arroz",
-                    "price": "38.00"
+                    "price": "48.00"
                 },
                 {
                     "name": "AMERICANO",
                     "description": "rocoto al horno, pastel de papa, sarza de patitas, arroz, guiso del dia",
-                    "price": "40.00"
+                    "price": "50.00"
                 },
                 {
                     "name": "CHULETA DE RES",
                     "description": "jugoso filete de carne de res con papas y legumbres",
-                    "price": "35.00"
+                    "price": "45.00"
                 },
                 {
                     "name": "MILANESA JUNIOR",
                     "description": "",
-                    "price": "16.00"
+                    "price": "25.00"
                 },
                 {
                     "name": "POLLO A LA PLANCHA",
                     "description": "pechuga de pollo a la plancha con ensalada y papas fritas",
-                    "price": "35.00"
+                    "price": "45.00"
                 },
                 {
                     "name": "CHICHARRÓN DE POLLO",
                     "description": "trozos de pollo crocante, servido con papas doradas y ensalada",
-                    "price": "35.00"
+                    "price": "45.00"
+                },
+                {
+                    "name": "CUY CHACTADO",
+                    "description": "",
+                    "price": "70.00"
+                },
+                {
+                    "name": "ARROZ CON PATO",
+                    "description": "",
+                    "price": "40.00"
+                },
+                {
+                    "name": "CALDO DE LOMO",
+                    "description": "",
+                    "price": "30.00"
                 }
             ]
         },
